@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<config
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference
+        for="Icube\TrainingApi\Api\TrainerManagementInterface"
+        type="Icube\TrainingApi\Model\TrainerManagement"/>
+
+    <preference
+        for="Icube\TrainingApi\Api\Data\TrainerInterface"
+        type="Icube\TrainingApi\Model\Trainer"/>
+
+    <preference
+        for="Icube\TrainingApi\Api\Data\TrainerSearchResultsInterface"
+        type="Magento\Framework\Api\SearchResults"/>
+</config>
