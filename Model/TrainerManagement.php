@@ -5,6 +5,7 @@ namespace Icube\TrainingApi\Model;
 use Magento\Framework\Api\SearchCriteriaInterface;
 use Magento\Framework\Exception\InputException;
 use Magento\Framework\Exception\LocalizedException;
+use Magento\Framework\Api\SortOrder;
 use Icube\TrainingApi\Api\TrainerManagementInterface;
 use Icube\TrainingApi\Api\Data\TrainerInterface;
 use Icube\TrainingApi\Api\Data\TrainerSearchResultsInterfaceFactory;
@@ -35,15 +36,6 @@ class TrainerManagement implements TrainerManagementInterface
 	 */
 	public function getTrainers(SearchCriteriaInterface $searchCriteria)
 	{
-		// $trainerCollection = $this->trainerFactory->create()->getCollection();
-
-        // $trainers = [];
-        // foreach ($trainerCollection as $trainer) {
-            // $trainers[] = $trainer;
-        // }
-
-        // return $trainers;
-        
         $searchResults = $this->searchResultFactory->create();
         $searchResults->setSearchCriteria($searchCriteria);
 
