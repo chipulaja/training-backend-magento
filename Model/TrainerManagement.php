@@ -25,7 +25,7 @@ class TrainerManagement implements TrainerManagementInterface
 
 	public function __construct(
 		TrainerFactory $trainerFactory,
-		TrainerSearchResultsInterfaceFactory $searchResultFactory
+        TrainerSearchResultsInterfaceFactory $searchResultFactory
     ) {
 		$this->trainerFactory = $trainerFactory;
         $this->searchResultFactory = $searchResultFactory;
@@ -78,6 +78,18 @@ class TrainerManagement implements TrainerManagementInterface
 	{
         $trainer = $this->trainerFactory->create();
         $trainer->load($id);
+		return $trainer;
+	}
+
+
+    /**
+	 * {@inheritdoc}
+	 */
+	public function deleteTrainerById($id)
+	{
+        $trainer = $this->trainerFactory->create();
+        $trainer->load($id);
+        $trainer->delete();
 		return $trainer;
 	}
 

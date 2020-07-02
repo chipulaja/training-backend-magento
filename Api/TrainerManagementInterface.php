@@ -32,4 +32,13 @@ interface TrainerManagementInterface
      * @throws \Magento\Framework\Exception\LocalizedException
 	 */
 	public function postTrainer(TrainerInterface $trainer);
+
+	/**
+	 * Delete trainer by id
+     *
+	 * @param int $id
+	 * @return Icube\TrainingApi\Api\Data\TrainerInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException If the trainer id is invalid
+	 */
+	public function deleteTrainerById($id);
 }

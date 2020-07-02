@@ -38,4 +38,11 @@
 		</resources>
 	</route>
 
+	<route url="/V1/training/trainer/delete/:id" method="POST" >
+		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="deleteTrainerById"/>
+		<resources>
+			<resource ref="self"/>
+		</resources>
+	</route>
+
 </routes>
