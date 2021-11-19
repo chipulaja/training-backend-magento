@@ -3,22 +3,22 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
 
-	<route url="/V1/training/trainer/admin/:id" method="GET" >
-		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="getTrainerById"/>
+	<route url="/V1/training/trainer-as-admin/:id" method="GET" >
+		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="getTrainerByIdAsAdmin"/>
 		<resources>
 			<resource ref="Magento_Backend::admin"/>
 		</resources>
 	</route>
 
-	<route url="/V1/training/trainer/self/:id" method="GET" >
-		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="getTrainerById"/>
+	<route url="/V1/training/trainer-as-self/:id" method="GET" >
+		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="getTrainerByIdAsSelf"/>
 		<resources>
 			<resource ref="self"/>
 		</resources>
 	</route>
 
-	<route url="/V1/training/trainer/:id" method="GET" >
-		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="getTrainerById"/>
+	<route url="/V1/training/trainer-as-anonymous/:id" method="GET" >
+		<service class="Icube\TrainingApi\Api\TrainerManagementInterface" method="getTrainerByIdAsAnonym"/>
 		<resources>
 			<resource ref="anonymous"/>
 		</resources>

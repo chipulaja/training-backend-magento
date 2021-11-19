@@ -16,13 +16,31 @@ interface TrainerManagementInterface
 	public function getTrainers(SearchCriteriaInterface $searchCriteria);
 
     /**
-	 * GET trainer by id
+	 * GET trainer by id as Admin
      *
 	 * @param string $id
 	 * @return Icube\TrainingApi\Api\Data\TrainerInterface
      * @throws \Magento\Framework\Exception\NoSuchEntityException If the trainer id is invalid
 	 */
-	public function getTrainerById($id);
+	public function getTrainerByIdAsAdmin($id);
+
+    /**
+	 * GET trainer by id as Self
+     *
+	 * @param string $id
+	 * @return Icube\TrainingApi\Api\Data\TrainerInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException If the trainer id is invalid
+	 */
+	public function getTrainerByIdAsSelf($id);
+
+    /**
+	 * GET trainer by id as Anonym
+     *
+	 * @param string $id
+	 * @return Icube\TrainingApi\Api\Data\TrainerInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException If the trainer id is invalid
+	 */
+	public function getTrainerByIdAsAnonym($id);
 
     /**
 	 * Post trainer

@@ -74,6 +74,34 @@ class TrainerManagement implements TrainerManagementInterface
     /**
 	 * {@inheritdoc}
 	 */
+	public function getTrainerByIdAsAdmin($id)
+	{
+		return $this->getTrainerById($id);
+	}
+
+    /**
+	 * {@inheritdoc}
+	 */
+	public function getTrainerByIdAsSelf($id)
+	{
+		return $this->getTrainerById($id);
+	}
+
+    /**
+	 * {@inheritdoc}
+	 */
+	public function getTrainerByIdAsAnonym($id)
+	{
+		return $this->getTrainerById($id);
+	}
+
+    /**
+	 * GET trainer by id
+     *
+	 * @param string $id
+	 * @return Icube\TrainingApi\Api\Data\TrainerInterface
+     * @throws \Magento\Framework\Exception\NoSuchEntityException If the trainer id is invalid
+	 */
 	public function getTrainerById($id)
 	{
         $trainer = $this->trainerFactory->create();
